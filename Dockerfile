@@ -10,4 +10,4 @@ COPY . /app/
 
 RUN poetry install --no-root
 
-ENTRYPOINT [ "poetry", "run", "gunicorn", "website.wsgi", "-b", "0.0.0.0:${PORT}" ]
+ENTRYPOINT poetry run gunicorn website.wsgi -b 0.0.0.0:$PORT
