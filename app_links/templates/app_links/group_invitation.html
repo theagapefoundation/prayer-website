@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://prayer.theagapefoundation.org">
+  <meta property="og:title" content="{{ group.name }}">
+  <meta property="og:image" content="{{ group.banner }}">
+  <meta property="og:description" content="{{ group.description }}">
+  <meta property="og:site_name" content="Prayer">
+  <meta property="og:image:width" content="1000">
+  <meta property="og:image:height" content="500">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="https://crosswand.com/_app/immutable/assets/icon.b05f7882.png">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+    p {
+      font-family: 'Young Serif', serif;
+    }
+    button {
+      font-family: 'Times New Roman', Times, serif;
+    }
+  </style>
+  <title>{{ group.name }}</title>
+</head>
+<body class="bg-black">
+  <div class="d-flex flex-column vw-100 vh-100 justify-content-center align-items-center pb-5">
+    <div class="vw-50 max-vw-70 d-flex flex-column align-items-center px-5">
+      <img src="https://crosswand.com/_app/immutable/assets/icon.b05f7882.png" width="100" height="100" />
+      <p class="text-center text-white mt-3">A new command I give you: Love one another. As I have loved you, so you must love one another. By this everyone will know that you are my disciples, if you love one another.</p>
+      <p class="text-center text-secondary">John 13:34 - 35 (NIV)</p>
+    </div>
+    <div class="spinner-border text-primary mt-3" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p class="mt-3 text-dark-emphasis">You are being redirected to the app</p>
+    <button id="scheme_button" type="button" class="btn btn-primary mt-5" onclick="window.open('prayer://groups/{{group_id}}');">Open</button>
+    <button id="app_button" type="button" class="btn btn-primary invisible btn-outline-secondary mt-2">Get the App</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.5/mobile-detect.min.js"></script>
+  <script>
+    const md = new MobileDetect(window.navigator.userAgent);
+    function assignAppLink() {
+      const os = md.os();
+      const button = document.getElementById("app_button");
+      let location;
+      if (/iOS|iPadOS/.test(os)) {
+        location = 'https://apps.apple.com/app/id6471775802';
+      } else if (/AndroidOS/i.test(os)) {
+          location = 'https://play.google.com/store/apps/details?id=com.crosswand.prayer';
+      }
+      button.onclick = () => {
+        window.open(location, '_blank');
+      }
+      button.classList.remove('invisible');
+      if(location == null) {
+        button.classList.add('disabled');
+      }
+    }
+    function assignUriScheme() {
+      const button = document.getElementById("scheme_button");
+      button.onclick = () => {
+        window.open('');
+      }
+    }
+    assignAppLink();
+    assignUriScheme();
+  </script>
+</body>
+</html>
