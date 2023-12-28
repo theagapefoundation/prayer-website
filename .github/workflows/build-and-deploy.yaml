@@ -50,5 +50,5 @@ jobs:
             VERSION=${{ github.sha }}
           secrets: |
             DATABASE_URL=prayer-api-db-url:latest
-            SECRET_KEY=prayer-api-django-secret-key:latest
+            DJANGO_SECRET_KEY=prayer-api-django-secret-key:latest
           flags: '--add-cloudsql-instances=${{ secrets.CLOUDSQL_INSTANCE_ID }}'
