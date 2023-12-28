@@ -30,6 +30,13 @@ urlpatterns = [
             content_type="application/json",
         ),
     ),
+    path(
+        ".well-known/assetlinks.json",
+        TemplateView.as_view(
+            template_name="apple-app-site-association.json",
+            content_type="application/json",
+        ),
+    ),
 ]
 
 handler404 = "website.views.handler404"
