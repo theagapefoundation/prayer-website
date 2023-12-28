@@ -31,3 +31,6 @@ urlpatterns = [
         ),
     ),
 ]
+
+handler404 = "website.views.handler404"
+handler500 = "website.views.handler500"
