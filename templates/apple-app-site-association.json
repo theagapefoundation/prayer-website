@@ -3,9 +3,13 @@
     "apps": [],
     "details": [
       {
-        "appId":"8V945F5BWK.com.crosswand.prayer",
-        "paths": [
-          "/i/groups/*"
+        "appIds":[
+          "8V945F5BWK.com.crosswand.prayer"
+        ],
+        "components": [
+          {
+            "/": "/i/groups/*"
+          }
         ]
       }
     ]
