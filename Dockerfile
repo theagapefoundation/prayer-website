@@ -8,6 +8,6 @@ ENV PYTHONUNBUFFERED 1
 
 COPY . /app/
 
-RUN poetry install --no-root
+RUN poetry install --compile
 
 ENTRYPOINT poetry run gunicorn website.wsgi -b 0.0.0.0:$PORT
