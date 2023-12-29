@@ -33,7 +33,7 @@ urlpatterns = [
     path(
         ".well-known/assetlinks.json",
         TemplateView.as_view(
-            template_name="apple-app-site-association.json",
+            template_name="assetlinks.json",
             content_type="application/json",
         ),
     ),
