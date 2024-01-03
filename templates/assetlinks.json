@@ -1,9 +1,11 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "prayer",
-    "package_name": "com.crosswand.prayer",
-    "sha256_cert_fingerprints":
-    ["BE:5B:AE:F0:0A:79:2E:60:13:55:23:0C:FC:B9:1E:12:94:1A:B6:57:A0:3F:98:18:07:8C:FC:68:0F:CA:5E:81"]
-  }  
-}]
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.crosswand.prayer",
+      "sha256_cert_fingerprints":
+        ["BE:5B:AE:F0:0A:79:2E:60:13:55:23:0C:FC:B9:1E:12:94:1A:B6:57:A0:3F:98:18:07:8C:FC:68:0F:CA:5E:81"]
+    }
+  }
+]
